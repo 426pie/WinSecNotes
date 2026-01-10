@@ -17,5 +17,7 @@ Build:
 A little more complicated than others.
 
 ```ml64 /c syscall_x64.asm /Fo:syscall_x64.obj```
+
 ```cl CustomSyscall.c /Fo:CustomSyscall.obj```
+
 ```link CustomSyscall.obj syscall_x64.obj /OUT:CustomSyscall.exe /SUBSYSTEM:CONSOLE```
