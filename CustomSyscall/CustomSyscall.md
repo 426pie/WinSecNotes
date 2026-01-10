@@ -10,7 +10,10 @@ The good thing about these Windows API functions, is that most of them are very 
 
 In a hooked function, one of the first two MOV instructions are replaced with a JMP instruction (which jumps into the hook where all the EDR checking happens - once the hook is finished, it will JMP back into this function to call SYSCALL).
 
-So basically, we just need to recreate our own generalized version of the above function, and make the Syscall Service Number variable. There is one Syscall Service Number per System Call. See [this Github page](https://github.com/j00ru/windows-syscalls/tree/master) for reference (SSN may be different depending on Windows OS verison).
+So basically, we just need to recreate our own generalized version of the above function, and make the Syscall Service Number variable. There is one Syscall Service Number per System Call. 
+
+CustomSyscall.c dynamically finds the SSN (without using WinAPI functions itself) in its ```CustomGetModuleHandle()``` and ```CustomGetProcAddressCustom()``` functions.
+See [this Github page](https://github.com/j00ru/windows-syscalls/tree/master) for reference (SSN may be different depending on Windows OS verison).
 
 Build:
 
