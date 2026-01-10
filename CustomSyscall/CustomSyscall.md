@@ -13,7 +13,7 @@ In a hooked function, one of the first two MOV instructions are replaced with a 
 So basically, we just need to recreate our own generalized version of the above function, and make the Syscall Service Number variable. There is one Syscall Service Number per System Call. 
 
 CustomSyscall.c dynamically finds the SSN (without using WinAPI functions itself) in its ```CustomGetModuleHandle()``` and ```CustomGetProcAddressCustom()``` functions.
-See [this Github page](https://github.com/j00ru/windows-syscalls/tree/master) for reference (SSN may be different depending on Windows OS verison).
+You can also find them at [this Github page](https://github.com/j00ru/windows-syscalls/tree/master) for reference (SSN may be different depending on Windows OS verison).
 
 Build:
 
