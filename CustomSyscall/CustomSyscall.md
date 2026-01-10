@@ -17,6 +17,10 @@ Note that Hell's Gate (and we) breaks down the syscall functions into two parts.
 CustomSyscall.c dynamically finds the SSN (without using WinAPI functions itself) in its ```CustomGetModuleHandle()``` and ```CustomGetProcAddressCustom()``` functions.
 You can also find them at [this Github page](https://github.com/j00ru/windows-syscalls/tree/master) for reference (SSN may be different depending on Windows OS verison).
 
+NOTE: Further work could involve using an Indirect Syscall jump. This may be necessary for modern EDRs because they may check who is calling the SYSCALL instruction and
+if some random address space (not ```ntdll.dll``` for example) is calling SYSCALL, then the EDR knows something isn't right. The workaround is simple to jump to a ```SYSCALL```
+instruction in ```ntdll``` (or some other valid address space).
+
 Build:
 
 A little more complicated than others.
