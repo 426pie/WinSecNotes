@@ -1,4 +1,4 @@
-#Port Forwarding and SOCKS5
+# Port Forwarding and SOCKS5
 
 Firstly, Port Forwarding. This is a server that listens for TCP or UDP traffic on a specified host + port (local host + port) and then simply sends the same data to another specified port(remote host + port).
 
